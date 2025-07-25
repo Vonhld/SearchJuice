@@ -1,5 +1,5 @@
 default: &default
-  adapter: postgresql 
+  adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: searchjuice
@@ -16,6 +16,4 @@ test:
 
 production:
   <<: *default
-  database: SearchJuice_production
-  username: SearchJuice
-  password: <%= ENV['SEARCHJUICE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
