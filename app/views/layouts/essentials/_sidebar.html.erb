@@ -1,0 +1,61 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <%= link_to home_path, class: 'brand-link text-center' do %>
+    <b><span class="brand-text font-weight-light">SearchJuice</span></b>
+  <% end %>
+  <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3">
+      <div class="d-flex justify-content-center">
+        <div class="image">
+          <img src="https://cdn3.iconfinder.com/data/icons/drinks-8/512/Juice_Glass-512.png"
+               class="img-circle elevation-2" alt="Juice Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block"></a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+        <li class="nav-item">
+          <%= link_to home_path,
+              class: "nav-link" do %>
+              <i class="nav-icon fas fa-globe"></i>
+              <p>Search</p>
+            <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to articles_path,
+              class: "nav-link" do %>
+              <i class="nav-icon fa-solid fa-pen-nib"></i>
+              <p>Articles</p>
+            <% end %>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-user"></i>
+            <p>
+              Analytics
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item active">
+              <%= link_to user_analytics_path,
+                class: "nav-link active" do %>
+                <i class="nav-icon fa-solid fa-file"></i>
+                <p>My data</p>
+              <% end %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to global_analytics_path,
+                class: "nav-link active" do %>
+                <i class="nav-icon fa-solid fa-file"></i>
+                <p>Global data</p>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row p-2">
+        <div class="col">
+            <h1 class="text-center align-middle display-6">Article</h1>
+        </div>
+    </div>
+
+    <div class="row p-2 justify-content-center">
+        <div class="card card-outline col-lg-8 col-md-10">
+            <div class="card-body">
+
+                <h6 class="text-left"><i class="fa-solid fa-pen-nib"></i>   Article Details</h6>
+                <hr class="mb-2"/>
+
+                <dl class="row">
+                    <dt class="col-sm-4">Title:</dt>
+                    <dd class="col-sm-8"><%= @article.title %></dd>
+
+                    <dt class="col-sm-4">Summary:</dt>
+                    <dd class="col-sm-8"><%= @article.summary %></dd>
+
+                    <dt class="col-sm-4">Category:</dt>
+                    <dd class="col-sm-8"><%= @article.category %></dd>
+
+                    <dt class="col-sm-4">Content:</dt>
+                    <dd class="col-sm-8"><%= @article.content %></dd>
+                </dl>
+
+                <br>
+                <h6 class="text-left"><i class="fa-solid fa-user"></i>   Author</h6>
+                <hr class="mb-2"/>
+
+                <dl class="row">
+                    <dt class="col-sm-4">Name:</dt>
+                    <dd class="col-sm-8"><%= @article.author_name %></dd>
+                </dl>
+            </div>
+
+            <br/>
+            <div class="row ml-1 mb-1">
+                <%= link_to 'Back', :back, class: "btn btn-default" %>
+            </div>
+        </div>
+    </div>
+</div>

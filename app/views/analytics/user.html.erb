@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>My Personal Analytics</h1>
+    <%= link_to 'Global Analytics', global_analytics_path, class: 'btn btn-outline-secondary' %>
+  </div>
+  <p class="text-muted">Displaying analytics for IP address: <%= @user_ip %></p>
+
+  <div class="card text-center mb-4">
+    <div class="card-body">
+      <h5 class="card-title">My Total Searches</h5>
+      <p class="card-text display-4"><%= @user_total_searches %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>My Top Queries</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Query</th>
+            <th class="text-end">Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user_top_queries.each do |query, count| %>
+            <tr>
+              <td><%= query %></td>
+              <td class="text-end"><%= count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h3>My Full Search History</h3>
+      <div style="max-height: 400px; overflow-y: auto;">
+        <table class="table table-sm">
+          <tbody>
+            <% @user_search_history.each do |search| %>
+              <tr>
+                <td><%= search.query %></td>
+                <td class="text-muted text-end"><%= search.created_at.strftime("%b %d, %Y - %I:%M %p") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

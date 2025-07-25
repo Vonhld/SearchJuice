@@ -1,0 +1,60 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Global Search Analytics</h1>
+    <%= link_to 'My Personal Analytics', user_analytics_path, class: 'btn btn-outline-primary' %>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Total Searches</h5>
+          <p class="card-text display-4"><%= @total_searches %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Unique Users</h5>
+          <p class="card-text display-4"><%= @unique_users %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Top 20 Overall Queries</h3>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Query</th>
+            <th class="text-end">Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @top_global_queries.each do |query, count| %>
+            <tr>
+              <td><%= query %></td>
+              <td class="text-end"><%= count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h3>Most Recent Searches</h3>
+      <table class="table table-sm">
+        <tbody>
+          <% @recent_searches.each do |search| %>
+            <tr>
+              <td><%= search.query %></td>
+              <td class="text-muted text-end"><%= time_ago_in_words(search.created_at) %> ago</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

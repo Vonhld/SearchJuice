@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SearchJuice</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+  <div class="wrapper">
+    <%= render partial: 'layouts/essentials/top_navbar' %>
+    <%= render partial: 'layouts/essentials/sidebar' %>
+    <div class="content-wrapper px-4 py-2">
+      <%= yield %>
+    </div>
+    <%= render partial: 'layouts/essentials/footer' %>
+  </div>
+</body>
+</html>

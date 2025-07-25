@@ -1,0 +1,19 @@
+<div class="modal fade" id="start-modal-center" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Terms of use</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>&emsp;Can we store your IP address? To use this tool, we use your IP address as a key for storing data. Don't worry, it won't be public.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <%= button_to "Confirm", give_consent_path, method: :post, id:"modal-confirm", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
