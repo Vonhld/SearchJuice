@@ -26,11 +26,14 @@ export default class extends Controller {
     const options = {
       list: this.listValue,
       gridSize: 10,
-      weightFactor: 5,
       fontFamily: 'Arial, sans-serif',
       backgroundColor: '#f8f9fa',
       rotateRatio: 0.5,
       minSize: 5,
+      // Normalization factor for word weight
+      weightFactor: (size) =>{
+        return Math.pow(size, 0.6) * 8;
+      },
 
       // Paint the hovered word
       color: (word) => {

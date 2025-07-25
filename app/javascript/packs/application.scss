@@ -1,0 +1,51 @@
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback");
+@import "admin-lte";
+
+.search {
+  --padding: 24px;
+
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: var(--padding);
+  border-radius: 45px;
+  background: #979797;
+  width: 50rem;
+  transition: background 0.30s;
+}
+
+.search:focus-within {
+  background:#c7c7c7;
+}
+
+
+.search-input {
+  font-size: 32px;
+  font-family: 'Lexend', sans-serif;
+  color: #333333;
+  //margin-left: var(--padding);
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 40rem;
+  flex: 1;
+}
+
+.search-input::placeholder,
+.search-icon {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.result-item{
+  cursor: pointer
+}
+
+.result-item:hover {
+  background-color: rgb(204, 204, 204);
+}
+
+#word-cloud-canvas {
+  border: 3px solid #343a40;
+  border-radius: 45px;
+}
